@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d05f4ea-4cb1-46c5-9ec2-2f3cdb0cf051">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FCCCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFE6E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="077b7ff0-0f38-424c-9651-9a611bb4765d"/>
+	<subDataset name="dataset1" uuid="cc5357c0-89b0-4948-849a-a686ea986cbd"/>
+	<parameter name="tanggal1" class="java.lang.String"/>
+	<parameter name="tanggal2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_transaksi.`no_booking` AS tbl_transaksi_no_booking,
+     tbl_transaksi.`nama_tim` AS tbl_transaksi_nama_tim,
+     tbl_transaksi.`harga` AS tbl_transaksi_harga,
+     tbl_transaksi.`jam` AS tbl_transaksi_jam
+FROM
+     `tbl_transaksi` tbl_transaksi
+WHERE
+     tanggal between $P{tanggal1} and $P{tanggal2}]]>
+	</queryString>
+	<field name="tbl_transaksi_no_booking" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_nama_tim" class="java.lang.String"/>
+	<field name="tbl_transaksi_harga" class="java.lang.Integer"/>
+	<field name="tbl_transaksi_jam" class="java.lang.Integer"/>
+	<variable name="tbl_transaksi_harga_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{tbl_transaksi_harga}]]></variableExpression>
+	</variable>
+	<variable name="tbl_transaksi_harga_2" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{tbl_transaksi_harga}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="-4" width="290" height="67" uuid="c3bff58e-0333-43e3-a1f0-ea472b5fa1a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ GEMBIRA FUTSAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="39" width="280" height="51" uuid="4bf8a543-98bc-497f-9673-2bab70c90e75"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jalan Soekaro - Hatta No.23 Desa Limbung, Kecamatan Sungai Raya, Kabupaten KubuRaya Tlp. +62 896 0678 3978]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="6" width="61" height="20" uuid="1b9357f4-8dbd-4dd6-91fb-ae0d4079df61"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Laporan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="6" width="22" height="20" uuid="403281ac-da87-4d35-9efe-f85d5d4d1f16"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[S/D]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="6" width="81" height="20" uuid="a5ec07d3-ecb4-4749-b765-b6195de93454"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggal1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="6" width="95" height="20" uuid="303aa486-e0c0-4f6a-909d-3b167de08f9a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggal2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="6" width="81" height="20" uuid="29d5dbd6-8c07-42d9-9164-7cc62ace75e5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NO BOOKING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="6" width="81" height="20" uuid="013d9069-0cf8-44df-885b-fa240e027f8a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA TIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="6" width="81" height="20" uuid="dcdc4d43-aafb-4335-a3f4-5a874198f040"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="6" width="81" height="20" uuid="1dc59cef-a505-4055-a03c-59565a633e4f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="11" width="100" height="20" uuid="16a31049-8d42-45fe-9a40-d5c1127ae751"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_no_booking}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="12" width="100" height="20" uuid="235a47e6-acff-48d0-bfd9-a37c98a9edb8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_nama_tim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="12" width="100" height="20" uuid="6448b15c-728a-4ef5-81e7-adc6a7c363b7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="12" width="37" height="20" uuid="fb46d6c5-3332-4a26-af16-910052997602"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_transaksi_jam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="432" y="12" width="19" height="20" uuid="1185317a-4d79-4fe3-9e00-da7ba7f6f5fa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="379" y="14" width="65" height="20" uuid="3fb8727c-119d-4437-8a1e-48923f645037"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="452" y="14" width="81" height="20" uuid="81b593ac-0ae4-4f85-ab64-c9e9bf4ca425"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{tbl_transaksi_harga_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="433" y="13" width="19" height="20" uuid="02f1017d-b58f-49da-8e9e-2ed4600df7c5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

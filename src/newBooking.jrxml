@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="420" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="a7a84945-818b-4c59-8aa9-b080f2145198">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tbl_tempo.`no_booking` AS tbl_tempo_no_booking,
+     tbl_tempo.`nama_tim` AS tbl_tempo_nama_tim,
+     tbl_tempo.`no_hp` AS tbl_tempo_no_hp,
+     tbl_tempo.`tanggal` AS tbl_tempo_tanggal,
+     tbl_tempo.`jam_masuk` AS tbl_tempo_jam_masuk,
+     tbl_tempo.`jam_keluar` AS tbl_tempo_jam_keluar,
+     tbl_tempo.`harga` AS tbl_tempo_harga,
+     tbl_tempo.`sisa` AS tbl_tempo_sisa,
+     tbl_tempo.`jam` AS tbl_tempo_jam
+FROM
+     `tbl_tempo` tbl_tempo]]>
+	</queryString>
+	<field name="tbl_tempo_no_booking" class="java.lang.Integer"/>
+	<field name="tbl_tempo_nama_tim" class="java.lang.String"/>
+	<field name="tbl_tempo_no_hp" class="java.lang.String"/>
+	<field name="tbl_tempo_tanggal" class="java.sql.Date"/>
+	<field name="tbl_tempo_jam_masuk" class="java.lang.String"/>
+	<field name="tbl_tempo_jam_keluar" class="java.lang.String"/>
+	<field name="tbl_tempo_harga" class="java.lang.String"/>
+	<field name="tbl_tempo_sisa" class="java.lang.Integer"/>
+	<field name="tbl_tempo_jam" class="java.lang.Integer"/>
+	<group name="tbl_tempo_no_booking">
+		<groupExpression><![CDATA[$F{tbl_tempo_no_booking}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="161" height="67" uuid="18dd084f-8e1f-47ee-bf14-efbf62e5c34f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ GEMBIRA FUTSAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="2" width="225" height="51" uuid="d2444a0e-2fe0-4e8b-a196-5bbfb3df37ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[Jalan Soekaro-Hatta No.23 Desa Limbung, Kecamatan Sungai Raya, Kabupaten KubuRaya Tlp. +62 896 0678 3978]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="447" y="2" width="120" height="35" uuid="7399159b-b819-4162-8692-87e10351ea97"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA BOOKING]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="67" width="567" height="1" uuid="09e8a03a-b134-46cb-a2a3-6d5ee759c484"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="215" height="35" uuid="e36d09b5-9f2a-4f87-bcd4-368bfa47c0a0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="0" width="91" height="35" uuid="2f8fb76d-29df-419a-bb0f-7f8c637e8487"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_no_booking}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="442" y="11" width="29" height="20" uuid="894b7121-1267-405c-84a4-552e2a17e38e"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NO :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="224" splitType="Stretch">
+			<textField>
+				<reportElement x="91" y="84" width="54" height="20" uuid="27f40efd-67d7-45e5-b000-a74099ee91a5"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_tanggal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="120" width="567" height="1" uuid="71227e10-15ac-4ba2-b69d-10eaab16685b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="31" width="104" height="20" uuid="2b3b29a0-6096-4e2f-a9cb-1c07eac34fa4"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NAMA TEAM 	 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="83" width="104" height="20" uuid="71c92820-10d4-4622-81e9-5ff29d0b1f5b"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TANGGAL MAIN :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="31" width="109" height="20" uuid="461d38b7-95e2-40a7-a81b-4259434fad0e"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_nama_tim}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="217" y="31" width="100" height="20" uuid="7c8843e1-a974-45ac-9649-022a12c5f140"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JAM MASUK 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="57" width="100" height="20" uuid="8b9d4579-574e-4e8b-9a91-aa81f89d76b8"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JAM KELUAR 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="83" width="100" height="20" uuid="8eb57a2b-5f7b-4236-b614-242574614c65"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JAM SEWA 	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="307" y="31" width="56" height="20" uuid="96d094b7-8eb3-4ddf-9b74-3d53ef1e053f"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_jam_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="58" width="56" height="20" uuid="bc03693c-04b1-4452-8c7b-9dea26765861"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_jam_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="84" width="29" height="20" uuid="53e209a0-95aa-450b-997f-320c7f44f33c"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_jam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="378" y="31" width="109" height="20" uuid="a2760be4-01ab-4323-b1eb-bed99ca8194d"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA SEWA  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="57" width="109" height="20" uuid="030afb2a-f36c-4c96-9121-77bd620927db"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SISA BAYAR	 :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="492" y="31" width="73" height="20" uuid="b0441d79-4696-44f8-a52a-20ee7878297f"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="492" y="57" width="73" height="20" uuid="b91b500c-2ba4-448e-8b3c-fab3dd3671cc"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_sisa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="465" y="31" width="27" height="20" uuid="2a9a4758-9f82-453b-8e08-96e133585a02"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="57" width="27" height="20" uuid="574004d3-2896-419f-8c9c-953edd066ed1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="243" height="20" uuid="cce0785a-7054-4bbd-b542-be7c374a37e6"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NO. HP		 :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="91" y="57" width="109" height="20" uuid="7938d306-5197-4a1e-a6c3-0b6b02fc208f"/>
+				<textElement>
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempo_no_hp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="272" y="204" width="140" height="20" uuid="8c762630-b6b0-48f6-878f-0b558a9fe549"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<text><![CDATA[(.........................)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="144" width="140" height="20" uuid="92c2975f-1ebc-42f6-a630-c12c17defeb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<text><![CDATA[NAMA PEMESAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="204" width="140" height="20" uuid="ea179e00-b09d-450a-be7f-a564e6effcb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<text><![CDATA[(.........................)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="426" y="144" width="140" height="20" uuid="6639d7ea-a722-43b0-95ba-443fd5423b23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10"/>
+				</textElement>
+				<text><![CDATA[NAMA KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="144" width="312" height="20" uuid="c7fda9fc-02ab-45d9-825c-6f945085a4a2"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[*) Bawa nota sebagai bukti telah dilakukan booking sebelumnya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="164" width="312" height="20" uuid="62bf7e0a-80de-4c72-afb1-b5bef8ba15f9"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[*) Serahkan nota kepada keryawan futsal yang bertugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="184" width="312" height="20" uuid="3007afba-46d3-42ec-b8c9-bf9efc266781"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[*) Team minimal datang 10 menit sebelum jam masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="203" width="312" height="20" uuid="6cb58c14-3747-4b58-87ac-dc7d3a4eee97"/>
+				<textElement>
+					<font fontName="Verdana" size="8"/>
+				</textElement>
+				<text><![CDATA[*) Jika nota hilang kami tidak akan bertanggung jawab]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="567" height="1" uuid="979cb64f-ed15-46e4-88a6-a043f5b1e770"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="420" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fe43ef00-246f-4a9d-b08b-6c34092b82ea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbl_tempotransaksi.`no_booking` AS tbl_tempotransaksi_no_booking,
+     tbl_tempotransaksi.`nama_tim` AS tbl_tempotransaksi_nama_tim,
+     tbl_tempotransaksi.`jam_masuk` AS tbl_tempotransaksi_jam_masuk,
+     tbl_tempotransaksi.`jam_keluar` AS tbl_tempotransaksi_jam_keluar,
+     tbl_tempotransaksi.`harga` AS tbl_tempotransaksi_harga,
+     tbl_tempotransaksi.`sisa` AS tbl_tempotransaksi_sisa,
+     tbl_tempotransaksi.`jam` AS tbl_tempotransaksi_jam,
+     tbl_tempotransaksi.`bayar` AS tbl_tempotransaksi_bayar,
+     tbl_tempotransaksi.`kembalian` AS tbl_tempotransaksi_kembalian
+FROM
+     `tbl_tempotransaksi` tbl_tempotransaksi]]>
+	</queryString>
+	<field name="tbl_tempotransaksi_no_booking" class="java.lang.Integer"/>
+	<field name="tbl_tempotransaksi_nama_tim" class="java.lang.String"/>
+	<field name="tbl_tempotransaksi_jam_masuk" class="java.lang.String"/>
+	<field name="tbl_tempotransaksi_jam_keluar" class="java.lang.String"/>
+	<field name="tbl_tempotransaksi_harga" class="java.lang.Integer"/>
+	<field name="tbl_tempotransaksi_sisa" class="java.lang.Integer"/>
+	<field name="tbl_tempotransaksi_jam" class="java.lang.Integer"/>
+	<field name="tbl_tempotransaksi_bayar" class="java.lang.Integer"/>
+	<field name="tbl_tempotransaksi_kembalian" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="435" y="0" width="120" height="35" uuid="5277a730-941b-4274-9f57-df055656791a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTA TRANSAKSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="161" height="67" uuid="e4a519c8-00a4-4e5c-8df6-b3a0509ca120"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Verdana" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ GEMBIRA FUTSAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="225" height="51" uuid="e1d53ca3-7cc2-4427-b1a0-a730f5afe38d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[Jalan Soekaro - Hatta No.23 Desa Limbung, Kecamatan Sungai Raya, Kabupaten KubuRaya Tlp. +62 896 0678 3978]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="435" y="8" width="29" height="20" uuid="1e72a670-fc82-4d86-b3cb-833e8bd879cb"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="215" height="35" uuid="5881a323-13bb-4448-a093-1dd0c0be24c6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="a73ad532-cbb5-47aa-83dd-62396f4c7bf4"/>
+			</line>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1" uuid="18a69fcf-1bf9-4182-a5b9-d65ce432c58c"/>
+			</line>
+			<textField>
+				<reportElement x="462" y="6" width="85" height="20" uuid="6a450151-017f-4c80-962e-8ad1eb017597"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_no_booking}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="98" height="20" uuid="d35b3c97-a45c-49a0-bf18-d2ae6ac3be50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA TIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="6" width="98" height="20" uuid="1bd6fce6-ecce-4b45-9b9e-aeab0caacf8a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JAM MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="6" width="98" height="20" uuid="6d9a6307-2c37-47a5-8186-145e8facf413"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JAM KELUAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="6" width="98" height="20" uuid="c65bd2ca-e08b-430a-bcc1-6ee3f6f7efa3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="6" width="98" height="20" uuid="07ae99a2-b0b7-45c0-ad67-a000cb3aa785"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="11" width="97" height="20" uuid="41b55c25-7a86-488b-841b-073f181fc608"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_nama_tim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="11" width="49" height="20" uuid="67eeedd7-29cc-467e-bd7a-7b8331caf8a6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_jam_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="11" width="49" height="20" uuid="b44f2703-3531-467b-9a5d-4466fd8edfea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_jam_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="11" width="31" height="20" uuid="040437b1-ee42-456f-ab99-db6c842152d9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="11" width="69" height="20" uuid="6ec17432-c540-4c20-b146-6a6b1d145371"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_harga}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="462" y="11" width="20" height="20" uuid="1c742cb0-ebf2-4652-baae-905a88bcc1e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="74" width="95" height="20" uuid="34c74a46-85e1-45dc-911b-28cd8708f3c6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[SISA		:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="94" width="129" height="20" uuid="b11d24f6-943c-43bb-98d6-d9c60721e9e6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[BAYAR	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="485" y="94" width="68" height="20" uuid="abbbd7df-34fc-4984-b9b3-c2720b3f4faf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_bayar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="462" y="74" width="20" height="20" uuid="be3c0844-df3a-4946-94de-c8c6921861de"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="94" width="20" height="20" uuid="91952daf-2405-4ebe-9271-5876f6313c83"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="484" y="75" width="69" height="20" uuid="98303ec9-bcef-49c6-b490-584a0e6d6ddd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_sisa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="366" y="114" width="95" height="20" uuid="081066af-2e06-45f0-99e4-4f2109e83fb0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[KEMBALIAN 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="113" width="20" height="20" uuid="ffe76194-9030-403c-afa0-c854427d6b4d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="485" y="114" width="67" height="20" uuid="171ba1fa-735a-49de-90d4-2dc1bb42cb39"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tbl_tempotransaksi_kembalian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="555" height="20" uuid="e77ea919-4356-4670-a60b-62e3fa7bd948"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TERIMA KASIH ATAS KUNJUNGAN ANDA !!!]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="554" height="2" uuid="046c77bc-60d6-42b1-b217-d8ebe1b03a0c"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>
